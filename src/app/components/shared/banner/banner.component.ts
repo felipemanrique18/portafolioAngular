@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare const myTest: any;
 
 @Component({
   selector: 'app-banner',
@@ -10,6 +11,8 @@ export class BannerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+      
+    myTest();
   }
 
 }

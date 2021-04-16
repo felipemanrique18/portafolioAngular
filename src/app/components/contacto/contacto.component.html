@@ -4,7 +4,7 @@
             <div class="col-12">
                 <div class="section-title mb-4 pb-2">
                     <h4 class="title mb-4">Contacto</h4>
-                    <p class="text-muted para-desc mb-0">Start working with <span class="text-primary font-weight-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                    <p class="text-muted para-desc mb-0">Si tienes alguna pregunta ponte en contacto</p>
                 </div>
             </div>
             <!--end col-->
@@ -15,39 +15,54 @@
             <div class="col-lg-4 col-md-6  mt-4 pt-2">
                 <div class="card rounded shadow border-0">
                     <div class="card-body py-5">
-                        <h4 class="card-title">Get In Touch !</h4>
+                        <h4 class="card-title">Ponte en contacto !</h4>
                         <div class="custom-form mt-3">
-                            <div id="message"></div>
-                            <form method="post" action="php/contact.php" name="contact-form" id="contact-form">
+                            <div class="d-flex align-items-center " *ngIf="loading">
+                                <strong>Loading...</strong>
+                                <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                            </div>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="enviado">
+                                Tu mensaje fue enviado correctamente
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form [formGroup]="formcontacto" (ngSubmit)="enviarFormContacto()" *ngIf="!loading">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group position-relative">
-                                            <label>Your Name <span class="text-danger">*</span></label>
+                                            <label>Nombre <span class="text-danger">*</span></label>
                                             <i data-feather="user" class="fea icon-sm icons"></i>
-                                            <input name="name" id="name" type="text" class="form-control pl-5" placeholder="First Name :">
+                                            <input name="name" id="name" type="text" class="form-control pl-5" placeholder="Tu nombre :" formControlName="nombre" [class.is-invalid]="isValid('nombre')">
+                                            <div class="invalid-feedback">
+                                                Ingresa un nombre
+                                            </div>
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-md-12">
                                         <div class="form-group position-relative">
-                                            <label>Your Email <span class="text-danger">*</span></label>
+                                            <label>Email <span class="text-danger">*</span></label>
                                             <i data-feather="mail" class="fea icon-sm icons"></i>
-                                            <input name="email" id="email" type="email" class="form-control pl-5" placeholder="Your email :">
+                                            <input name="email" id="email" type="email" class="form-control pl-5" placeholder="Tu email :" formControlName="email" [class.is-invalid]="isValid('email')">
+                                            <div class="invalid-feedback">
+                                                Ingresa un Email Valido
+                                            </div>
                                         </div>
                                     </div>
                                     <!--end col-->
                                     <div class="col-md-12">
                                         <div class="form-group position-relative">
-                                            <label>Comments</label>
+                                            <label>Comentario</label>
                                             <i data-feather="message-circle" class="fea icon-sm icons"></i>
-                                            <textarea name="comments" id="comments" rows="4" class="form-control pl-5" placeholder="Your Message :"></textarea>
+                                            <textarea name="comments" id="comments" rows="4" class="form-control pl-5" placeholder="Tu mensaje :" formControlName="mensaje"></textarea>
                                         </div>
                                     </div>
                                 </div>
                                 <!--end row-->
                                 <div class="row">
                                     <div class="col-sm-12 text-center">
-                                        <input type="submit" id="submit" name="send" class="submitBnt btn btn-primary btn-block" value="Send Message">
+                                        <button type="submit" name="send" class="submitBnt btn btn-primary btn-block">Enviar</button>
                                         <div id="simple-msg"></div>
                                     </div>
                                     <!--end col-->
@@ -65,6 +80,7 @@
             <div class="col-lg-8 col-md-6 pl-md-3 pr-md-3 mt-4 pt-2">
                 <div class="card border-0 shadow rounded">
                     <div class="map map-height-two map-gray">
+                        <img src="assets/images/contacto/about.png" style="border:0" class="rounded mx-auto d-block" allowfullscreen="">
                         <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39206.002432144705!2d-95.4973981212445!3d29.709510002925988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16de81f3ca5%3A0xf43e0b60ae539ac9!2sGerald+D.+Hines+Waterwall+Park!5e0!3m2!1sen!2sin!4v1566305861440!5m2!1sen!2sin"
                             style="border:0" class="rounded" allowfullscreen=""></iframe> -->
                     </div>
