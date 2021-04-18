@@ -1,0 +1,1 @@
+function typen(){$(document).ready(function(){$(".element").each(function(){var e=$(this);e.typed({strings:e.attr("data-elements").split(","),typeSpeed:100,backDelay:3e3})})})}function loading(){$(document).ready(function(){$("#status").fadeOut(),$("#preloader").delay(350).fadeOut("slow"),$("body").delay(350).css({overflow:"visible"})})}

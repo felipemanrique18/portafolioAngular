@@ -1,5 +1,5 @@
 // Typed Text
-function myTest() {
+function typen() {
     $(document).ready(function() {
         $(".element").each(function() {
             var $this = $(this);
@@ -10,4 +10,14 @@ function myTest() {
             });
         });
     })
+};
+
+function loading() {
+    $(document).ready(function() {
+        $('#status').fadeOut();
+        $('#preloader').delay(350).fadeOut('slow');
+        $('body').delay(350).css({
+            'overflow': 'visible'
+        });
+    });
 }

@@ -19,13 +19,7 @@ $(document).ready(function() {
     ! function($) {
         "use strict";
         // Loader 
-        $(window).on('load', function() {
-            $('#status').fadeOut();
-            $('#preloader').delay(350).fadeOut('slow');
-            $('body').delay(350).css({
-                'overflow': 'visible'
-            });
-        });
+
 
         // Menu
         $('.navbar-toggle').on('click', function(event) {
