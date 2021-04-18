@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-declare const myTest: any;
+declare const typen: any;
 
 @Component({
   selector: 'app-banner',
@@ -12,7 +12,7 @@ export class BannerComponent implements OnInit {
 
   ngOnInit(): void {
       
-    myTest();
+    typen();
   }
 
 }
